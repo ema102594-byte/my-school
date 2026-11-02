@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Школа Мрія 🌸</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: #fff9f7;
+    color: #514653;
+}
+
+header {
+    background: rgba(255,255,255,0.9);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #eadde5;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #c17b9d;
+}
+
+nav a {
+    text-decoration: none;
+    color: #655465;
+    margin-left: 22px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #d38bad;
+}
+
+.hero {
+    min-height: 570px;
+    background: linear-gradient(120deg, #fce4ed, #f4eafa, #e5f1f5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    animation: appear 1.2s ease;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 65px);
+    color: #a9688c;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #d994b2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #bd7295;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #d9a7be;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #b97899;
+    margin-bottom: 35px;
+}
+
+.about {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px #eadde5;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .emoji {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #bd7d9d;
+    margin-bottom: 12px;
+}
+
+.schedule {
+    background: #f9edf3;
+}
+
+table {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 17px;
+    text-align: center;
+    border-bottom: 1px solid #f0e1e9;
+}
+
+th {
+    background: #d994b2;
+    color: white;
+}
+
+.register {
+    background: linear-gradient(120deg, #fce8ef, #f0eafa);
+}
+
+.form-box {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 5px 25px #e6d5df;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #e5cbd8;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+    border-color: #cf8eac;
+}
+
+.form-box button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    color: #a9688c;
+    font-weight: bold;
+}
+
+footer {
+    background: #bd829e;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    line-height: 2;
+}
+
+/* Анімації */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    th, td {
+        padding: 10px 5px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌸 Школа Мрія</div>
+    <nav>
+        <a href="#home">Головна</a>
+        <a href="#about">Про нас</a>
+        <a href="#subjects">Предмети</a>
+        <a href="#schedule">Розклад</a>
+        <a href="#register">Реєстрація</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Ласкаво просимо! 🌷</h1>
+    <p>
+        Школа «Мрія» — місце, де народжуються
+        великі мрії, відкриваються таланти
+        та починається шлях до успіху!
+    </p>
+    <a href="#register" class="btn">Записатися до школи ✨</a>
+</div>
+
+<section id="about" class="reveal">
+    <h2 class="section-title">Про нашу школу 💗</h2>
+    <div class="about">
+        <p>
+            Ми віримо, що кожна дитина особлива.
+            У нашій школі панує дружня атмосфера,
+            підтримка та любов до навчання.
+            Ми допомагаємо учням розвиватися,
+            відкривати нові здібності та впевнено
+            рухатися до своїх цілей.
+        </p>
+    </div>
+</section>
+
+<section id="subjects" class="reveal">
+    <h2 class="section-title">Наші предмети 📚</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">📖</div>
+            <h3>Українська мова</h3>
+            <p>Вивчаємо рідну мову та літературу.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔢</div>
+            <h3>Математика</h3>
+            <p>Розвиваємо логіку та мислення.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🌍</div>
+            <h3>Англійська мова</h3>
+            <p>Відкриваємо світ нових можливостей.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎨</div>
+            <h3>Мистецтво</h3>
+            <p>Розкриваємо творчість і таланти.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔬</div>
+            <h3>Природознавство</h3>
+            <p>Досліджуємо навколишній світ.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💻</div>
+            <h3>Інформатика</h3>
+            <p>Знайомимося із сучасними технологіями.</p>
+        </div>
+    </div>
+</section>
+
+<section id="schedule" class="schedule reveal">
+    <h2 class="section-title">Розклад занять 🕒</h2>
+
+    <table>
+        <tr>
+            <th>День</th>
+            <th>Перший урок</th>
+            <th>Другий урок</th>
+        </tr>
+        <tr>
+            <td>Понеділок</td>
+            <td>Математика</td>
+            <td>Українська мова</td>
+        </tr>
+        <tr>
+            <td>Вівторок</td>
+            <td>Англійська</td>
+            <td>Інформатика</td>
+        </tr>
+        <tr>
+            <td>Середа</td>
+            <td>Мистецтво</td>
+            <td>Математика</td>
+        </tr>
+        <tr>
+            <td>Четвер</td>
+            <td>Українська мова</td>
+            <td>Природознавство</td>
+        </tr>
+        <tr>
+            <td>П'ятниця</td>
+            <td>Англійська</td>
+            <td>Мистецтво</td>
+        </tr>
+    </table>
+</section>
+
+<section id="register" class="register reveal">
+    <h2 class="section-title">Реєстрація учня 🌷</h2>
+
+    <div class="form-box">
+        <form id="registrationForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Ім'я учня"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Електронна пошта"
+                required
+            >
+
+            <select id="grade" required>
+                <option value="">Оберіть клас</option>
+                <option>1 клас</option>
+                <option>2 клас</option>
+                <option>3 клас</option>
+                <option>4 клас</option>
+                <option>5 клас</option>
+                <option>6 клас</option>
+                <option>7 клас</option>
+                <option>8 клас</option>
+                <option>9 клас</option>
+                <option>10 клас</option>
+                <option>11 клас</option>
+            </select>
+
+            <button type="submit" class="btn">
+                Зареєструватися 💗
+            </button>
+
+            <p id="message"></p>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <h3>🌸 Школа «Мрія»</h3>
+    <p>Навчайся. Розвивайся. Мрій!</p>
+    <p>© 2026 Усі права захищені.</p>
+</footer>
+
+<script>
+// Анімація появи блоків
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+// Реєстрація
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const grade = document.getElementById("grade").value;
+    const message = document.getElementById("message");
+
+    if (!name || !email || !grade) {
+        message.textContent = "Заповніть усі поля!";
+        return;
+    }
+
+    message.textContent =
+        "Дякуємо, " + name +
+        "! Ваша заявка успішно оформлена 💗";
+
+    this.reset();
+});
+</script>
+
+</body>
+  </html>
+  
